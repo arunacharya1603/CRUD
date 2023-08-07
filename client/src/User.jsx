@@ -3,10 +3,12 @@ import React, { useState } from "react";
 import { useEffect } from "react";
 import {Link} from 'react-router-dom';
 
+const url="https://crud-server-ewkx.onrender.com"
+
 function User() {
     const [user, setUser] = useState([])
     useEffect(()=>{
-        axios.get('http://localhost:3001')
+        axios.get(`${url}`)
         .then(res => setUser(res.data))
         .catch(err => console.log(err))
 
@@ -14,7 +16,7 @@ function User() {
     }, [])
 
     const handleDelete = (id) => {
-        axios.delete('http://localhost:3001/deleteUser/'+id)
+        axios.delete(`${url}/deleteUser/`+id)
         .then(res => {console.log(res)
             window.location.reload()
         })

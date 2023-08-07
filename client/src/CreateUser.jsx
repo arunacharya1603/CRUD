@@ -4,7 +4,7 @@ import axios from 'axios'
 import {useNavigate} from 'react-router-dom'
 // import {url} from "../../client/src/constant"
 
-const url="http://localhost:3001"
+const url="https://crud-server-ewkx.onrender.com"
 
 // Use BASE_URL in your code
 
